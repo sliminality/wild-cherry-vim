@@ -8,7 +8,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "Wild Cherry"
+let g:colors_name = "wildcherry"
 
 hi Cursor ctermfg=17 ctermbg=231 cterm=NONE guifg=#2b1f32 guibg=#f8f8f0 gui=NONE
 hi Visual ctermfg=NONE ctermbg=54 cterm=NONE guifg=NONE guibg=#4a1386 gui=NONE
@@ -32,7 +32,7 @@ hi Boolean ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
 hi Character ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
 hi Comment ctermfg=61 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=NONE gui=NONE
 hi Conditional ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Constant ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi Constant ctermfg=39 ctermbg=NONE cterm=NONE guifg=#099BD7 guibg=NONE gui=NONE
 hi Define ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
 hi DiffAdd ctermfg=231 ctermbg=64 cterm=bold guifg=#f8f8f2 guibg=#47810f gui=bold
 hi DiffDelete ctermfg=88 ctermbg=NONE cterm=NONE guifg=#8c060a guibg=NONE gui=NONE
@@ -49,7 +49,7 @@ hi NonText ctermfg=52 ctermbg=53 cterm=NONE guifg=#38072f guibg=#352a3c gui=NONE
 hi Number ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
 hi Operator ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
 hi PreProc ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Special ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=NONE gui=NONE
+hi Special ctermfg=44 ctermbg=NONE cterm=italic guifg=#00d7d7 guibg=NONE gui=italic
 hi SpecialKey ctermfg=52 ctermbg=59 cterm=NONE guifg=#38072f guibg=#403545 gui=NONE
 hi Statement ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
 hi StorageClass ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=italic
@@ -57,7 +57,7 @@ hi String ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
 hi Tag ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
 hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
 hi Todo ctermfg=61 ctermbg=NONE cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
-hi Type ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+hi Type ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFD16F guibg=NONE gui=NONE
 hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
 hi rubyClass ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
 hi rubyFunction ctermfg=71 ctermbg=NONE cterm=NONE guifg=#35ba66 guibg=NONE gui=NONE
