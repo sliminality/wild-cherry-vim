@@ -1,107 +1,286 @@
-" Vim color file
-" Converted from Textmate theme Wild Cherry using Coloration v0.4.0 (http://github.com/sickill/coloration)
+" Format shamelessly stolen from Ayu for Vim (https://github.com/ayu-theme/ayu-vim)
+" I didn't even bother to remove Ayu Light and Mirage colors, I'm sorry...it's a
+" great theme so maybe try that one out next.
 
-set background=dark
-highlight clear
-
+" Initialisation:"{{{
+" ----------------------------------------------------------------------------
+hi clear
 if exists("syntax_on")
   syntax reset
 endif
 
+let s:style = get(g:, '', 'dark')
 let g:colors_name = "wildcherry"
+"}}}
 
-hi Cursor ctermfg=17 ctermbg=231 cterm=NONE guifg=#2b1f32 guibg=#f8f8f0 gui=NONE
-hi Visual ctermfg=NONE ctermbg=54 cterm=NONE guifg=NONE guibg=#4a1386 gui=NONE
-hi CursorLine ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#403545 gui=NONE
-hi CursorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#403545 gui=NONE
-hi ColorColumn ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#403545 gui=NONE
-hi LineNr ctermfg=102 ctermbg=59 cterm=NONE guifg=#928b92 guibg=#403545 gui=NONE
-hi VertSplit ctermfg=59 ctermbg=59 cterm=NONE guifg=#665e6a guibg=#665e6a gui=NONE
-hi MatchParen ctermfg=168 ctermbg=NONE cterm=underline guifg=#e15d97 guibg=NONE gui=underline
-hi StatusLine ctermfg=231 ctermbg=59 cterm=bold guifg=#f8f8f2 guibg=#665e6a gui=bold
-hi StatusLineNC ctermfg=231 ctermbg=59 cterm=NONE guifg=#f8f8f2 guibg=#665e6a gui=NONE
-hi Pmenu ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi PmenuSel ctermfg=NONE ctermbg=54 cterm=NONE guifg=NONE guibg=#4a1386 gui=NONE
-hi IncSearch ctermfg=17 ctermbg=222 cterm=NONE guifg=#2b1f32 guibg=#fed888 gui=NONE
-hi Search ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
-hi Directory ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi Folded ctermfg=61 ctermbg=17 cterm=NONE guifg=#6272a4 guibg=#2b1f32 gui=NONE
+" Palettes:"{{{
+" ----------------------------------------------------------------------------
 
-hi Normal ctermfg=231 ctermbg=17 cterm=NONE guifg=#f8f8f2 guibg=#2b1f32 gui=NONE
-hi Boolean ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi Character ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi Comment ctermfg=61 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=NONE gui=NONE
-hi Conditional ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Constant ctermfg=39 ctermbg=NONE cterm=NONE guifg=#099BD7 guibg=NONE gui=NONE
-hi Define ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi DiffAdd ctermfg=231 ctermbg=64 cterm=bold guifg=#f8f8f2 guibg=#47810f gui=bold
-hi DiffDelete ctermfg=88 ctermbg=NONE cterm=NONE guifg=#8c060a guibg=NONE gui=NONE
-hi DiffChange ctermfg=231 ctermbg=23 cterm=NONE guifg=#f8f8f2 guibg=#26355d gui=NONE
-hi DiffText ctermfg=231 ctermbg=24 cterm=bold guifg=#f8f8f2 guibg=#204a87 gui=bold
-hi ErrorMsg ctermfg=231 ctermbg=168 cterm=NONE guifg=#f8f8f0 guibg=#e15d97 gui=NONE
-hi WarningMsg ctermfg=231 ctermbg=168 cterm=NONE guifg=#f8f8f0 guibg=#e15d97 gui=NONE
-hi Float ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi Function ctermfg=71 ctermbg=NONE cterm=NONE guifg=#35ba66 guibg=NONE gui=NONE
-hi Identifier ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=italic
-hi Keyword ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Label ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi NonText ctermfg=52 ctermbg=53 cterm=NONE guifg=#38072f guibg=#352a3c gui=NONE
-hi Number ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi Operator ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi PreProc ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Special ctermfg=44 ctermbg=NONE cterm=italic guifg=#00d7d7 guibg=NONE gui=italic
-hi SpecialKey ctermfg=52 ctermbg=59 cterm=NONE guifg=#38072f guibg=#403545 gui=NONE
-hi Statement ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi StorageClass ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=italic
-hi String ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi Tag ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#f8f8f2 guibg=NONE gui=bold
-hi Todo ctermfg=61 ctermbg=NONE cterm=inverse,bold guifg=#6272a4 guibg=NONE gui=inverse,bold
-hi Type ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFD16F guibg=NONE gui=NONE
-hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
-hi rubyClass ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi rubyFunction ctermfg=71 ctermbg=NONE cterm=NONE guifg=#35ba66 guibg=NONE gui=NONE
-hi rubyInterpolationDelimiter ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi rubySymbol ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi rubyConstant ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=italic
-hi rubyStringDelimiter ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi rubyBlockParameter ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=italic
-hi rubyInstanceVariable ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi rubyInclude ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi rubyGlobalVariable ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi rubyRegexp ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi rubyRegexpDelimiter ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi rubyEscape ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi rubyControl ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi rubyClassVariable ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi rubyOperator ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi rubyException ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi rubyPseudoVariable ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi rubyRailsUserClass ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=italic
-hi rubyRailsARAssociationMethod ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi rubyRailsARMethod ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi rubyRailsRenderMethod ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi rubyRailsMethod ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi erubyDelimiter ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi erubyComment ctermfg=61 ctermbg=NONE cterm=NONE guifg=#6272a4 guibg=NONE gui=NONE
-hi erubyRailsMethod ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi htmlTag ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi htmlEndTag ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi htmlTagName ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi htmlArg ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi htmlSpecialChar ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi javaScriptFunction ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=italic
-hi javaScriptRailsFunction ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi javaScriptBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi yamlKey ctermfg=168 ctermbg=NONE cterm=NONE guifg=#e15d97 guibg=NONE gui=NONE
-hi yamlAnchor ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi yamlAlias ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi yamlDocumentHeader ctermfg=222 ctermbg=NONE cterm=NONE guifg=#fed888 guibg=NONE gui=NONE
-hi cssURL ctermfg=215 ctermbg=NONE cterm=NONE guifg=#ffb86c guibg=NONE gui=italic
-hi cssFunctionName ctermfg=38 ctermbg=NONE cterm=NONE guifg=#0aacc5 guibg=NONE gui=NONE
-hi cssColor ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi cssPseudoClassId ctermfg=71 ctermbg=NONE cterm=NONE guifg=#35ba66 guibg=NONE gui=NONE
-hi cssClassName ctermfg=71 ctermbg=NONE cterm=NONE guifg=#35ba66 guibg=NONE gui=NONE
-hi cssValueLength ctermfg=98 ctermbg=NONE cterm=NONE guifg=#9b5fe0 guibg=NONE gui=NONE
-hi cssCommonAttr ctermfg=81 ctermbg=NONE cterm=NONE guifg=#6be5fd guibg=NONE gui=NONE
-hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
+let s:palette = {}
+
+let s:palette.bg        = {'dark': "#2b1f32",  'light': "#FAFAFA",  'mirage': "#212733"}
+
+let s:palette.comment   = {'dark': "#6272a4",  'light': "#ABB0B6",  'mirage': "#5C6773"}
+let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
+let s:palette.constant  = {'dark': "#9b5fe0",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
+let s:palette.operator  = {'dark': "#e15d97",  'light': "#E7C547",  'mirage': "#80D4FF"}
+let s:palette.tag       = {'dark': "#e15d97",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
+let s:palette.regexp    = {'dark': "#FFD16F",  'light': "#4CBF99",  'mirage': "#95E6CB"}
+let s:palette.args    = {'dark': "#ffb86c",  'light': "#4CBF99",  'mirage': "#95E6CB"}
+let s:palette.string    = {'dark': "#fed888",  'light': "#86B300",  'mirage': "#BBE67E"}
+let s:palette.function  = {'dark': "#35ba66",  'light': "#F29718",  'mirage': "#FFD57F"}
+let s:palette.special   = {'dark': "#00d7d7",  'light': "#E6B673",  'mirage': "#FFC44C"}
+let s:palette.keyword   = {'dark': "#e15d97",  'light': "#FF7733",  'mirage': "#FFAE57"}
+let s:palette.func_call   = {'dark': "#ffafaf",  'light': "#FF7733",  'mirage': "#FFAE57"}
+
+let s:palette.error     = {'dark': "#8c060a",  'light': "#FF3333",  'mirage': "#FF3333"}
+let s:palette.accent    = {'dark': "#e15d97",  'light': "#FF6A00",  'mirage': "#FFCC66"}
+let s:palette.panel     = {'dark': "#665e6a",  'light': "#FFFFFF",  'mirage': "#272D38"}
+let s:palette.guide     = {'dark': "#928b92",  'light': "#D9D8D7",  'mirage': "#3D4751"}
+let s:palette.line      = {'dark': "#403545",  'light': "#F3F3F3",  'mirage': "#242B38"}
+let s:palette.selection = {'dark': "#4a1386",  'light': "#F0EEE4",  'mirage': "#343F4C"}
+let s:palette.fg        = {'dark': "#f8f8f2",  'light': "#5c6773",  'mirage': "#d9d7ce"}
+let s:palette.fg_idle   = {'dark': "#d4bfff",  'light': "#828C99",  'mirage': "#607080"}
+
+"}}}
+
+" Highlighting Primitives:"{{{
+" ----------------------------------------------------------------------------
+
+function! s:build_prim(hi_elem, field)
+  let l:vname = "s:" . a:hi_elem . "_" . a:field " s:bg_gray
+  let l:gui_assign = "gui".a:hi_elem."=".s:palette[a:field][s:style] " guibg=...
+  exe "let " . l:vname . " = ' " . l:gui_assign . "'"
+endfunction
+
+let s:bg_none = ' guibg=NONE ctermbg=NONE'
+let s:fg_none = ' guifg=NONE ctermfg=NONE'
+for [key_name, d_value] in items(s:palette)
+  call s:build_prim('bg', key_name)
+  call s:build_prim('fg', key_name)
+endfor
+" }}}
+
+" Formatting Options:"{{{
+" ----------------------------------------------------------------------------
+let s:none   = "NONE"
+let s:t_none = "NONE"
+let s:n      = "NONE"
+let s:c      = ",undercurl"
+let s:r      = ",reverse"
+let s:s      = ",standout"
+let s:b      = ",bold"
+let s:u      = ",underline"
+let s:i      = ",italic"
+
+exe "let s:fmt_none = ' gui=NONE".          " cterm=NONE".          " term=NONE"        ."'"
+exe "let s:fmt_bold = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
+exe "let s:fmt_bldi = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
+exe "let s:fmt_undr = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
+exe "let s:fmt_undb = ' gui=NONE".s:u.s:b.  " cterm=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
+exe "let s:fmt_undi = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
+exe "let s:fmt_curl = ' gui=NONE".s:c.      " cterm=NONE".s:c.      " term=NONE".s:c    ."'"
+exe "let s:fmt_ital = ' gui=NONE".s:i.      " cterm=NONE".s:i.      " term=NONE".s:i    ."'"
+exe "let s:fmt_stnd = ' gui=NONE".s:s.      " cterm=NONE".s:s.      " term=NONE".s:s    ."'"
+exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE".s:r    ."'"
+exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
+"}}}
+
+
+" Vim Highlighting: (see :help highlight-groups)"{{{
+" ----------------------------------------------------------------------------
+exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
+" Conceal, Cursor, CursorIM
+exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
+exe "hi! LineNr"        .s:fg_guide       .s:bg_bg        .s:fmt_none
+
+exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
+exe "hi! DiffChange"    .s:fg_tag         .s:bg_panel       .s:fmt_none
+exe "hi! DiffText"      .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
+exe "hi! VertSplit"     .s:fg_line          .s:bg_line        .s:fmt_none
+exe "hi! Folded"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe "hi! FoldColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
+exe "hi! SignColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
+"   Incsearch"
+
+exe "hi! MatchParen"    .s:fg_tag          .s:bg_none          .s:fmt_undr
+exe "hi! ModeMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"       .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! NonText"       .s:fg_bg          .s:bg_none        .s:fmt_none
+exe "hi! Pmenu"         .s:fg_fg          .s:bg_selection   .s:fmt_none
+exe "hi! PmenuSel"      .s:fg_fg          .s:bg_selection   .s:fmt_revr
+"   PmenuSbar"
+"   PmenuThumb"
+exe "hi! Question"      .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! Search"        .s:fg_none        .s:bg_none        .s:fmt_undr
+exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! SpellCap"      .s:fg_tag         .s:bg_none        .s:fmt_undr
+exe "hi! SpellLocal"    .s:fg_keyword     .s:bg_none        .s:fmt_undr
+exe "hi! SpellBad"      .s:fg_error       .s:bg_none        .s:fmt_undr
+exe "hi! SpellRare"     .s:fg_regexp      .s:bg_none        .s:fmt_undr
+exe "hi! StatusLine"    .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! StatusLineNC"  .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe "hi! WildMenu"      .s:fg_bg          .s:bg_markup      .s:fmt_none
+exe "hi! TabLine"       .s:fg_fg          .s:bg_panel       .s:fmt_revr
+"   TabLineFill"
+"   TabLineSel"
+exe "hi! Title"         .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
+"   VisualNos"
+exe "hi! WarningMsg"    .s:fg_error       .s:bg_none        .s:fmt_none
+
+" TODO LongLineWarning to use variables instead of hardcoding
+hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NONE        ctermbg=NONE        cterm=underline
+"   WildMenu"
+
+"}}}
+
+" Generic Syntax Highlighting: (see :help group-name)"{{{
+" ----------------------------------------------------------------------------
+exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
+
+exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
+exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
+"   Character"
+"   Boolean"
+"   Float"
+exe "hi! Number"          .s:fg_constant    .s:bg_none        .s:fmt_none
+
+exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
+
+exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_none
+"   Conditional"
+"   Repeat"
+"   Label"
+exe "hi! Operator"        .s:fg_operator  .s:bg_none        .s:fmt_ital
+"   Keyword"
+"   Exception"
+
+exe "hi! PreProc"         .s:fg_special   .s:bg_none        .s:fmt_none
+"   Include"
+"   Define"
+"   Macro"
+"   PreCondit"
+
+exe "hi! Type"            .s:fg_tag       .s:bg_none        .s:fmt_none
+
+exe "hi! StorageClass"            .s:fg_keyword       .s:bg_none        .s:fmt_none
+
+exe "hi! Structure"       .s:fg_special   .s:bg_none        .s:fmt_none
+"   Typedef"
+
+exe "hi! Special"         .s:fg_special   .s:bg_none        .s:fmt_ital
+"   SpecialChar"
+"   Tag"
+"   Delimiter"
+"   SpecialComment"
+"   Debug"
+"
+exe "hi! Underlined"      .s:fg_tag       .s:bg_none        .s:fmt_undr
+
+exe "hi! Ignore"          .s:fg_none      .s:bg_none        .s:fmt_none
+
+exe "hi! Error"           .s:fg_fg        .s:bg_error       .s:fmt_none
+
+exe "hi! Todo"            .s:fg_markup    .s:bg_none        .s:fmt_none
+
+" Quickfix window highlighting
+exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
+"   qfFileName"
+"   qfLineNr"
+"   qfError"
+
+exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
+exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
+
+
+" JavaScript: (see :help highlight-groups)"{{{
+" ----------------------------------------------------------------------------
+exe "hi! jsFuncArgs"        .s:fg_args          .s:bg_bg          .s:fmt_none
+exe "hi! jsThis"        .s:fg_constant          .s:bg_bg          .s:fmt_ital
+exe "hi! jsClassNoise"        .s:fg_operator          .s:bg_bg          .s:fmt_none
+exe "hi! jsObjectKey"        .s:fg_string          .s:bg_bg          .s:fmt_none
+exe "hi! jsGlobalObjects"        .s:fg_special          .s:bg_bg          .s:fmt_ital
+exe "hi! jsFuncCall"        .s:fg_func_call          .s:bg_bg          .s:fmt_ital
+
+" Terminal in NVIM
+" ---------
+if has("nvim")
+  exec "hi! TermCursor"     .s:fg_bg    .s:bg_fg
+  let g:terminal_color_0 =  s:palette.bg[s:style]
+  let g:terminal_color_1 =  s:palette.markup[s:style]
+  let g:terminal_color_2 =  s:palette.string[s:style]
+  let g:terminal_color_3 =  s:palette.accent[s:style]
+  let g:terminal_color_4 =  s:palette.tag[s:style]
+  let g:terminal_color_5 =  s:palette.constant[s:style]
+  let g:terminal_color_6 =  s:palette.regexp[s:style]
+  let g:terminal_color_7 =  "#FFFFFF"
+  let g:terminal_color_8 =  s:palette.fg_idle[s:style]
+  let g:terminal_color_9 =  s:palette.error[s:style]
+  let g:terminal_color_10 = s:palette.string[s:style]
+  let g:terminal_color_11 = s:palette.accent[s:style]
+  let g:terminal_color_12 = s:palette.tag[s:style]
+  let g:terminal_color_13 = s:palette.constant[s:style]
+  let g:terminal_color_14 = s:palette.regexp[s:style]
+  let g:terminal_color_15 = s:palette.comment[s:style]
+  let g:terminal_color_background = g:terminal_color_0
+  let g:terminal_color_foreground = s:palette.fg[s:style]
+endif
+
+
+" NerdTree
+" ---------
+exe "hi! NERDTreeOpenable"          .s:fg_fg_idle     .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_accent      .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarksLeader"   .s:fg_bg          .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarkName"      .s:fg_keyword     .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_fg_idle    .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDir"               .s:fg_fg_idle    .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeFile"              .s:fg_fg    .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDirSlash"          .s:fg_string      .s:bg_none        .s:fmt_none
+
+
+" GitGutter
+" ---------
+exe "hi! GitGutterAdd"          .s:fg_string     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
+exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
+
+"}}}
+
+" Diff Syntax Highlighting:"{{{
+" ----------------------------------------------------------------------------
+" Diff
+"   diffOldFile
+"   diffNewFile
+"   diffFile
+"   diffOnly
+"   diffIdentical
+"   diffDiffer
+"   diffBDiffer
+"   diffIsA
+"   diffNoEOL
+"   diffCommon
+hi! link diffRemoved Constant
+"   diffChanged
+hi! link diffAdded String
+"   diffLine
+"   diffSubname
+"   diffComment
+
+"}}}
+"
+" This is needed for some reason: {{{
+
+let &background = s:style
+
+" }}}
